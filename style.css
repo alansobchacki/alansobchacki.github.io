@@ -1,12 +1,25 @@
 /* ---------- Theme tokens ---------- */
 
+/* Colors borrowed from Singularity: soft slate and blue by day, slate navy and emerald by night. */
 :root {
-  --bg: #ffffff;
-  --text: #16171a;
-  --text-muted: #55585f;
-  --line: #e2e3e6;
-  --surface: #f1f2f4;
-  --tag-bg: #eceef1;
+  --mono: "Geist Mono", ui-monospace, Menlo, Consolas, monospace;
+  --bg: #e2e8f0;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --line: #cbd5e1;
+  --surface: #d5dde8;
+  --card: #f1f5f9;
+  --card-shadow: 0 1px 2px rgb(15 23 42 / 0.05), 0 4px 16px rgb(15 23 42 / 0.06);
+  --accent: #2563eb;
+  --tag-bg: #f8fafc;
+  --tag-border: #cbd5e1;
+  --tag-text: #334155;
+  --tag-font: inherit;
+  --label-font: inherit;
+  --label-size: 15px;
+  --label-case: none;
+  --label-spacing: normal;
+  --label-color: var(--text);
   --sun: none;
   --moon: block;
   color-scheme: light;
@@ -14,12 +27,23 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #131417;
-    --text: #ffffff;
-    --text-muted: #c9cacd;
-    --line: #34363b;
-    --surface: #1e2024;
-    --tag-bg: #26282d;
+    --bg: #020617;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --line: #1e293b;
+    --surface: #1e293b;
+    --card: #0f172a;
+    --card-shadow: none;
+    --accent: #34d399;
+    --tag-bg: #1e293b;
+    --tag-border: #334155;
+    --tag-text: #e2e8f0;
+    --tag-font: var(--mono);
+    --label-font: var(--mono);
+    --label-size: 12px;
+    --label-case: uppercase;
+    --label-spacing: 0.08em;
+    --label-color: var(--text-muted);
     --sun: block;
     --moon: none;
     color-scheme: dark;
@@ -28,12 +52,23 @@
 
 /* Checked toggle = the opposite of the OS preference */
 :root:has(#theme-toggle:checked) {
-  --bg: #131417;
-  --text: #ffffff;
-  --text-muted: #c9cacd;
-  --line: #34363b;
-  --surface: #1e2024;
-  --tag-bg: #26282d;
+  --bg: #020617;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --line: #1e293b;
+  --surface: #1e293b;
+  --card: #0f172a;
+  --card-shadow: none;
+  --accent: #34d399;
+  --tag-bg: #1e293b;
+  --tag-border: #334155;
+  --tag-text: #e2e8f0;
+  --tag-font: var(--mono);
+  --label-font: var(--mono);
+  --label-size: 12px;
+  --label-case: uppercase;
+  --label-spacing: 0.08em;
+  --label-color: var(--text-muted);
   --sun: block;
   --moon: none;
   color-scheme: dark;
@@ -41,12 +76,23 @@
 
 @media (prefers-color-scheme: dark) {
   :root:has(#theme-toggle:checked) {
-    --bg: #ffffff;
-    --text: #16171a;
-    --text-muted: #55585f;
-    --line: #e2e3e6;
-    --surface: #f1f2f4;
-    --tag-bg: #eceef1;
+    --bg: #e2e8f0;
+    --text: #0f172a;
+    --text-muted: #475569;
+    --line: #cbd5e1;
+    --surface: #d5dde8;
+    --card: #f1f5f9;
+    --card-shadow: 0 1px 2px rgb(15 23 42 / 0.05), 0 4px 16px rgb(15 23 42 / 0.06);
+    --accent: #2563eb;
+    --tag-bg: #f8fafc;
+    --tag-border: #cbd5e1;
+    --tag-text: #334155;
+    --tag-font: inherit;
+    --label-font: inherit;
+    --label-size: 15px;
+    --label-case: none;
+    --label-spacing: normal;
+    --label-color: var(--text);
     --sun: none;
     --moon: block;
     color-scheme: light;
@@ -139,7 +185,7 @@ body [lang="pt-BR"] {
 }
 
 .site-nav a:hover {
-  border-bottom-color: currentColor;
+  border-bottom-color: var(--accent);
 }
 
 .header-actions {
@@ -166,7 +212,7 @@ body [lang="pt-BR"] {
 }
 
 body:has(#lang-toggle:focus-visible) .lang-button {
-  outline: 2px solid var(--text);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -207,7 +253,7 @@ body:has(#lang-toggle:focus-visible) .lang-button {
 }
 
 body:has(#theme-toggle:focus-visible) .theme-button {
-  outline: 2px solid var(--text);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -274,6 +320,7 @@ h1 {
   align-items: center;
   gap: 10px;
   font-weight: 400;
+  color: var(--accent);
 }
 
 .link-arrow::after {
@@ -302,7 +349,7 @@ h1 {
 }
 
 .inline-link {
-  color: var(--text);
+  color: var(--accent);
   font-weight: 400;
   border-bottom: 1px solid currentColor;
 }
@@ -314,8 +361,12 @@ h1 {
 }
 
 .section-title {
-  font-size: 15px;
+  font-family: var(--label-font);
+  font-size: var(--label-size);
   font-weight: 500;
+  text-transform: var(--label-case);
+  letter-spacing: var(--label-spacing);
+  color: var(--label-color);
   margin-bottom: 32px;
 }
 
@@ -367,17 +418,38 @@ h1 {
   gap: 24px;
 }
 
-.project {
+/* Projects and games share the same card */
+.project,
+.game-card {
   display: grid;
   grid-template-columns: 180px 1fr;
-  gap: 32px;
+  gap: 24px;
   align-items: start;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project:hover,
+.game-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  transform: translateY(-2px);
+}
+
+.project:focus-visible,
+.game-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .project img {
   width: 180px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
   transition: opacity 0.2s ease;
@@ -409,13 +481,307 @@ h1 {
   list-style: none;
 }
 
-.tags li {
+.tags li,
+.tags > span {
   font-size: 12px;
   font-weight: 400;
-  padding: 2px 10px;
-  border-radius: 999px;
+  font-family: var(--tag-font);
+  padding: 1px 8px;
+  border: 1px solid var(--tag-border);
+  border-radius: 6px;
   background: var(--tag-bg);
+  color: var(--tag-text);
+}
+
+/* ---------- Games ---------- */
+
+.game-card {
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.game-info {
+  display: grid;
+  gap: 4px;
+  justify-items: start;
+}
+
+.game-name {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.game-card:hover .game-name {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.game-name::after,
+.playable::after {
+  content: "\25B6";
+  margin-left: 10px;
+  font-size: 11px;
+  color: var(--accent);
+}
+
+.game-description {
   color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.game-preview {
+  display: grid;
+  place-items: center;
+  width: 180px;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #020617;
+  color: #e2e8f0;
+  font-family: var(--mono);
+  transition: opacity 0.2s ease;
+}
+
+.game-card:hover .game-preview {
+  opacity: 0.85;
+}
+
+.preview-chess {
+  display: grid;
+  grid-template-columns: repeat(8, 20px);
+  grid-auto-rows: 15px;
+  overflow: hidden;
+  border-radius: 2px;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.preview-chess i {
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  color: #f0abfc;
+  background: #475569;
+}
+
+.preview-chess i:nth-child(-n + 16) {
+  color: #7dd3fc;
+}
+
+/* Checkerboard: flip the shade on odd squares of even rows and even squares of odd rows. */
+.preview-chess i:nth-child(16n + 2),
+.preview-chess i:nth-child(16n + 4),
+.preview-chess i:nth-child(16n + 6),
+.preview-chess i:nth-child(16n + 8),
+.preview-chess i:nth-child(16n + 9),
+.preview-chess i:nth-child(16n + 11),
+.preview-chess i:nth-child(16n + 13),
+.preview-chess i:nth-child(16n + 15) {
+  background: #334155;
+}
+
+.preview-chess i:nth-child(53) {
+  background: #0369a1;
+}
+
+.preview-connect-four {
+  display: grid;
+  grid-template-columns: repeat(7, 14px);
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid #475569;
+  border-radius: 2px;
+}
+
+.preview-connect-four i {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #1e293b;
+}
+
+.preview-connect-four .r {
+  background: #ef4444;
+}
+
+.preview-connect-four .y {
+  background: #facc15;
+}
+
+.preview-hangman {
+  font-size: 12px;
+  line-height: 1.25;
+  white-space: pre;
+}
+
+.preview-mastermind {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.preview-mastermind b {
+  font-weight: 400;
+  color: #22d3ee;
+}
+
+.preview-mastermind em {
+  font-style: normal;
+  color: #ef4444;
+}
+
+/* ---------- Game dialog ---------- */
+
+/* A terminal window, dark in both themes so the games' colors always read well. */
+.game-dialog {
+  width: min(860px, calc(100% - 32px));
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  background: #0f172a;
+  color: #f1f5f9;
+  box-shadow: 0 24px 64px rgb(2 6 23 / 0.45);
+}
+
+.game-dialog[open] {
+  animation: dialog-in 0.2s ease-out;
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+.game-dialog::backdrop {
+  background: rgb(2 6 23 / 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.game-dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 8px 8px 16px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.window-dots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #334155;
+}
+
+.game-title {
+  margin-right: auto;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+.game-title::before {
+  content: "~/games/";
+  color: #34d399;
+}
+
+:root:has(#lang-toggle:checked) .game-title::before {
+  content: "~/jogos/";
+}
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.icon-button:hover {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+.icon-button:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 1px;
+}
+
+.icon-button svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.game-terminal {
+  position: relative;
+  padding: 12px 16px;
+  background: #020617;
+}
+
+.game-screen {
+  height: min(520px, 70vh);
+  color: #e2e8f0;
+}
+
+.game-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #020617;
+  color: #94a3b8;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.game-loading::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid #1e293b;
+  border-top-color: #34d399;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.game-loading[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-dialog[open],
+  .game-loading::before {
+    animation: none;
+  }
 }
 
 /* ---------- Detail lists ---------- */
@@ -479,12 +845,18 @@ h1 {
     padding-top: 0;
   }
 
-  .project {
+  .project,
+  .game-card {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
   .project img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .game-preview {
     width: 100%;
     aspect-ratio: 16 / 9;
   }

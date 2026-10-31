@@ -8,19 +8,13 @@
   <link rel="icon" href="assets/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!--
-    Hello, fellow dev / curious person.
+    Hi fellow curious person, I have a gift for you:
 
-    This site was built with pure HTML, CSS, and a tiny bit of JS. 
-    Why use a cannon when the basics are enough?
-
-    Anyway, as a reward for your curiosity,
-    I've set aside a really special gift for you:
-    
     https://www.youtube.com/watch?v=dQw4w9WgXcQ
   -->
 
@@ -93,11 +87,11 @@
         <a class="link-arrow" href="https://github.com/alansobchacki" target="_blank" rel="noopener noreferrer">github.com/alansobchacki</a>
         <p class="bio">
           <span lang="en">
-            Full-stack software engineer based in Brazil with 4+ years of experience. I work mostly with
+            Full-stack software engineer based in Brazil. I work mostly with
             TypeScript, React, Node.js, and PostgreSQL, with a slight preference for front-end work.
           </span>
           <span lang="pt-BR">
-            Engenheiro de software full-stack localizado no Brasil, com mais de 4 anos de experiência. Trabalho
+            Engenheiro de software full-stack localizado no Brasil. Trabalho
             principalmente com TypeScript, React, Node.js e PostgreSQL, com uma leve preferência pelo front-end.
           </span>
         </p>
@@ -175,10 +169,10 @@
       <h2 class="section-title"><span lang="en">Skills</span><span lang="pt-BR">Habilidades</span></h2>
 
       <div class="row entry">
-        <p class="entry-date">Stack</p>
+        <p class="entry-date"><span lang="en">Stack</span><span lang="pt-BR">Tecnologias</span></p>
         <dl class="entry-body detail-list">
           <dt><span lang="en">Languages</span><span lang="pt-BR">Linguagens</span></dt>
-          <dd>TypeScript, JavaScript</dd>
+          <dd>TypeScript, JavaScript, Ruby</dd>
           <dt>Back-end</dt>
           <dd>Node.js, NestJS, PostgreSQL, Redis, REST APIs</dd>
           <dt>Front-end</dt>
@@ -224,16 +218,16 @@
                 <span lang="pt-BR">Uma rede social full-stack com IA, feita para humanos e bots.</span>
               </p>
               <ul class="tags">
-                <li>TypeScript</li><li>NestJS</li><li>TypeORM</li><li>PostgreSQL</li><li>Docker</li><li>Redis</li>
-                <li>Jest</li><li>React</li><li>Tailwind</li><li>Cypress</li><li>Jotai</li><li>MUI</li>
+                <li>TypeScript</li><li>NestJS</li><li>PostgreSQL</li><li>Docker</li><li>Redis</li>
+                <li>Jest</li><li>React</li><li>Tailwind</li><li>Cypress</li>
               </ul>
             </div>
           </a>
 
-          <a class="project" href="https://github.com/alansobchacki/hidden-syndicate" target="_blank" rel="noopener noreferrer">
+          <a class="project" href="https://odin-react-wheres-waldo.vercel.app/" target="_blank" rel="noopener noreferrer">
             <img src="assets/hidden-syndicate.png" alt="" loading="lazy">
             <div>
-              <h3>Hidden Syndicate</h3>
+              <h3 class="playable">Hidden Syndicate</h3>
               <p>
                 <span lang="en">A full-stack hidden-object game for desktop.</span>
                 <span lang="pt-BR">Um jogo full-stack de objetos escondidos para desktop.</span>
@@ -244,29 +238,78 @@
             </div>
           </a>
 
-          <a class="project" href="https://github.com/alansobchacki/odin-chess" target="_blank" rel="noopener noreferrer">
-            <img src="assets/ruby-chess.jpg" alt="" loading="lazy">
-            <div>
-              <h3><span lang="en">Chess</span><span lang="pt-BR">Xadrez</span></h3>
-              <p>
-                <span lang="en">A hot-seat, command-line chess game written in Ruby.</span>
-                <span lang="pt-BR">Um jogo de xadrez para linha de comando, escrito em Ruby, para dois jogadores no mesmo computador.</span>
-              </p>
-              <ul class="tags"><li>Ruby</li></ul>
-            </div>
-          </a>
+          <button class="game-card" type="button" data-game="chess">
+            <span class="game-preview" aria-hidden="true"><span class="preview-chess">
+              <i>♜</i><i>♞</i><i>♝</i><i>♛</i><i>♚</i><i>♝</i><i>♞</i><i>♜</i>
+              <i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i>
+              <i>♜</i><i>♞</i><i>♝</i><i>♛</i><i>♚</i><i>♝</i><i>♞</i><i>♜</i>
+            </span></span>
+            <span class="game-info">
+              <span class="game-name"><span lang="en">Chess</span><span lang="pt-BR">Xadrez</span></span>
+              <span class="game-description">
+                <span lang="en">Play against a basic computer opponent. Move with WASD and capture pieces when they turn green.</span>
+                <span lang="pt-BR">Jogue contra um oponente simples. Mova com WASD e capture peças quando ficarem verdes.</span>
+              </span>
+              <span class="tags"><span>Ruby</span></span>
+            </span>
+          </button>
 
-          <a class="project" href="https://github.com/alansobchacki/odin-js-battleship" target="_blank" rel="noopener noreferrer">
-            <img src="assets/battleship.png" alt="" loading="lazy">
-            <div>
-              <h3><span lang="en">Battleship</span><span lang="pt-BR">Batalha Naval</span></h3>
-              <p>
-                <span lang="en">A browser-based game of Battleship against an AI.</span>
-                <span lang="pt-BR">Um jogo de Batalha Naval no navegador contra uma IA.</span>
-              </p>
-              <ul class="tags"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
-            </div>
-          </a>
+          <button class="game-card" type="button" data-game="hangman">
+            <span class="game-preview" aria-hidden="true"><span class="preview-hangman">  ______
+  |    |
+  O    |
+ /|    |
+       |
+_ _ _ a _ _ _ e</span></span>
+            <span class="game-info">
+              <span class="game-name"><span lang="en">Hangman</span><span lang="pt-BR">Forca</span></span>
+              <span class="game-description">
+                <span lang="en">Guess the hidden word one letter at a time. Comes with three difficulties.</span>
+                <span lang="pt-BR">Adivinhe a palavra secreta, uma letra por vez. Tem três níveis de dificuldade.</span>
+              </span>
+              <span class="tags"><span>Ruby</span></span>
+            </span>
+          </button>
+
+          <button class="game-card" type="button" data-game="connect-four">
+            <span class="game-preview" aria-hidden="true"><span class="preview-connect-four">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i class="r"></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i class="y"></i><i class="y"></i><i></i><i></i>
+              <i></i><i></i><i class="y"></i><i class="r"></i><i class="r"></i><i class="r"></i><i></i>
+            </span></span>
+            <span class="game-info">
+              <span class="game-name"><span lang="en">Connect Four</span><span lang="pt-BR">Lig 4</span></span>
+              <span class="game-description">
+                <span lang="en">Drop your tokens and line up four in a row before the computer does.</span>
+                <span lang="pt-BR">Solte suas fichas e alinhe quatro em sequência antes do computador.</span>
+              </span>
+              <span class="tags"><span>Ruby</span></span>
+            </span>
+          </button>
+
+          <button class="game-card" type="button" data-game="mastermind">
+            <span class="game-preview" aria-hidden="true"><span class="preview-mastermind">
+              <span><b>&gt; 1234</b> xx</span>
+              <span><b>&gt; 5566</b> <em>x</em>xx</span>
+              <span><b>&gt; 6516</b> <em>xx</em>x</span>
+            </span></span>
+            <span class="game-info">
+              <span class="game-name">Mastermind</span>
+              <span class="game-description">
+                <span lang="en">Break a four-digit code made of numbers from 1 to 6, or set one and watch the computer crack it.</span>
+                <span lang="pt-BR">Quebre um código de quatro dígitos com números de 1 a 6, ou crie um e veja o computador tentar decifrá-lo.</span>
+              </span>
+              <span class="tags"><span>Ruby</span></span>
+            </span>
+          </button>
         </div>
       </div>
     </section>
@@ -297,5 +340,25 @@
   <footer class="site-footer">
     <p>&copy; 2026 Alan Sobchacki</p>
   </footer>
+  <dialog id="game-dialog" class="game-dialog" aria-labelledby="game-dialog-title">
+    <div class="game-dialog-header">
+      <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <h2 id="game-dialog-title" class="game-title"></h2>
+      <button class="game-restart icon-button" type="button">
+        <span class="visually-hidden"><span lang="en">Restart</span><span lang="pt-BR">Reiniciar</span></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+      <button class="game-close icon-button" type="button">
+        <span class="visually-hidden"><span lang="en">Close</span><span lang="pt-BR">Fechar</span></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="game-terminal">
+      <div class="game-screen"></div>
+      <p class="game-loading"><span lang="en">Loading Ruby…</span><span lang="pt-BR">Carregando o Ruby…</span></p>
+    </div>
+  </dialog>
+
+  <script src="games.js" defer></script>
 </body>
 </html>
